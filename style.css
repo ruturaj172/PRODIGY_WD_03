@@ -1,0 +1,101 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px; /* Added padding for smaller screens */
+    box-sizing: border-box; /* Ensures padding doesn't increase total width/height */
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px; /* Max width for the game container */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.status {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #555;
+    min-height: 1.5em; /* Prevents layout shift when text changes */
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: repeat(3, 1fr);    /* 3 equal rows */
+    gap: 10px;
+    width: 90vw; /* Responsive width */
+    max-width: 300px; /* Max width for board itself */
+    height: 90vw;   /* Responsive height */
+    max-height: 300px;/* Max height for board itself */
+    margin: 0 auto 20px auto; /* Center the board and add margin */
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+}
+
+.cell {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em; /* Relative to cell size, adjust as needed */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    aspect-ratio: 1 / 1; /* Ensure cells are square */
+}
+
+.cell:hover {
+    background-color: #f9f9f9;
+}
+
+.cell.x {
+    color: #007bff; /* Blue for X */
+}
+
+.cell.o {
+    color: #dc3545; /* Red for O */
+}
+
+.reset-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #28a745; /* Green */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.reset-button:hover {
+    background-color: #218838;
+}
+
+/* Responsive adjustments for very small screens if needed */
+@media (max-width: 320px) {
+    .cell {
+        font-size: 2.5em;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    .status {
+        font-size: 1em;
+    }
+}
